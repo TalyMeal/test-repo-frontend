@@ -1,0 +1,50 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+.card-container {
+  background-color: $bg-card;
+  border-radius: $radius-card;
+  box-shadow: $shadow-card;
+  padding: 1rem;
+  margin: 0.5rem;
+  width: 100%;
+  max-width: 24rem;
+}
+
+.card-status {
+  background-color: $color-green-bg;
+  color: $color-green-text;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 9999px;
+}
+
+.btn-test {
+  background-color: $color-blue-50;
+  color: $color-blue-500;
+  font-size: 0.875rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.375rem; 
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: $color-blue-100;
+  }
+}
+
+.btn-setup {
+  width: 100%;
+  background-color: #000;
+  color: $color-white-500;
+  font-size: 0.875rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  text-align: center;
+  transition: background-color 0.2s;
+  border: none;
+  
+  &:hover {
+    background-color: #333;
+  }
+}

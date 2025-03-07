@@ -9,3 +9,7 @@ export const fetchUsers = async () => {
   return response.data;
 };
 
+export const patchUserName = async (id: any, newName: any) => {
+  const response = await apiClient.patch(`/users/${id}`, { name: newName });
+  return response.data;
+};

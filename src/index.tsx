@@ -1,7 +1,7 @@
-/* @refresh reload */
-import { render } from 'solid-js/web'
+import { ErrorBoundary, render } from 'solid-js/web'
 import './index.css'
 import App from './App.tsx'
+import { Error } from './components/Error.tsx'
 import { QueryClient, QueryClientProvider } from '@tanstack/solid-query'
 
 const root = document.getElementById('root')
@@ -15,4 +15,14 @@ render(() => {
           },
         },
       });
-      return (<QueryClientProvider client={queryClient}><App /></QueryClientProvider>)}, root!)
+      return (
+      <QueryClientProvider client={queryClient}>
+        <ErrorBoundary fallback={(error, reset) => {
+          return (
+              <Error {...{error, reset}}/>
+            )
+          }}>
+          <App />
+        </ErrorBoundary>
+      </QueryClientProvider>
+      )}, root!)
